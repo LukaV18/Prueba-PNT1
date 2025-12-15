@@ -1,0 +1,67 @@
+﻿@model Agenda_C.Models.Prestacion
+
+@{
+    ViewData["Title"] = "Detalle de Prestacion";
+    var isAdmin = User.IsInRole("Administrador");
+}
+
+<h1>@Model.Nombre</h1>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <h4 class="card-title">Informacion de la Prestacion</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-3">Descripcion</dt>
+            <dd class="col-sm-9">@Model.Descripcion</dd>
+            
+            <dt class="col-sm-3">Duracion</dt>
+            <dd class="col-sm-9">@Model.Duracion minutos</dd>
+            
+            <dt class="col-sm-3">Precio</dt>
+            <dd class="col-sm-9">$@Model.Precio</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header">
+        <h5>Profesionales que brindan esta prestacion</h5>
+    </div>
+    <div class="card-body">
+        @if (Model.Profesionales != null && Model.Profesionales.Any())
+        {
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nombre Completo</th>
+                        <th>Email</th>
+                        <th>Matricula</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var prof in Model.Profesionales.OrderBy(p => p.Apellido).ThenBy(p => p.Nombre))
+                    {
+                        <tr>
+                            <td>@prof.Apellido, @prof.Nombre</td>
+                            <td>@prof.Email</td>
+                            <td>@(prof.Matricula != null ? $"{prof.Matricula.Tipo} - N {prof.Matricula.Numero}" : "Sin matricula")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p class="text-muted">No hay profesionales asignados a esta prestacion.</p>
+        }
+    </div>
+</div>
+
+<div>
+    @if (isAdmin)
+    {
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning">Editar</a>
+    }
+    <a asp-action="Index" class="btn btn-secondary">Volver al Listado</a>
+</div>

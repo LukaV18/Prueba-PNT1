@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Agenda_C.Models.Profesional>
+@using Microsoft.AspNetCore.Identity
+@using Agenda_C.Models
+@inject UserManager<Persona> UserManager
+
+@{
+    ViewData["Title"] = "Profesionales";
+    var isAdmin = User.IsInRole("Administrador");
+}
+
+<h1>Profesionales</h1>
+
+@if (isAdmin)
+{
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Nuevo Profesional</a>
+    </p>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Matricula)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prestacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoraInicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoraFin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                Email
+            </th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @if (item.Matricula != null)
+                {
+                    @Html.DisplayFor(modelItem => item.Matricula.Numero)
+                }
+            </td>
+            <td>
+                @if (item.Prestacion != null)
+                {
+                    @Html.DisplayFor(modelItem => item.Prestacion.Nombre)
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoraInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoraFin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Detalles</a>
+                @if (isAdmin)
+                {
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Editar</a> 
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Eliminar</a>
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

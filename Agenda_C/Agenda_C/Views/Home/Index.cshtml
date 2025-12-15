@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="text-center mb-5">
+    <h1 class="display-4">Bienvenido a MediTurnos</h1>
+    <p class="lead">Sistema de gestión de turnos médicos</p>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-8 mx-auto">
+        <div class="card shadow">
+            <div class="card-body">
+                <h4 class="card-title">Sobre Nosotros</h4>
+                <p class="card-text">
+                    <strong>MediTurnos</strong> es un centro médico de atención integral ubicado en la Ciudad de Buenos Aires.
+                    Contamos con un equipo de profesionales altamente calificados en diversas especialidades médicas.
+                </p>
+                <p class="card-text">
+                    <strong>Dirección:</strong> Av. Corrientes 1234, CABA<br/>
+                    <strong>Teléfono:</strong> (011) 4567-8900<br/>
+                    <strong>Horario de Atención:</strong> Lunes a Viernes de 8:00 a 20:00 hs
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row text-center">
+    <div class="col-md-4">
+        <div class="card h-100 border-primary">
+            <div class="card-body">
+                <h5 class="card-title text-primary">Nuestras Prestaciones</h5>
+                <p class="card-text">Conocé todas las especialidades y servicios que ofrecemos.</p>
+                <a asp-controller="Prestaciones" asp-action="Index" class="btn btn-outline-primary">Ver Prestaciones</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 border-success">
+            <div class="card-body">
+                <h5 class="card-title text-success">Nuestros Profesionales</h5>
+                <p class="card-text">Consultá el listado de profesionales y sus especialidades.</p>
+                <a asp-controller="Profesionales" asp-action="Index" class="btn btn-outline-success">Ver Profesionales</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 border-info">
+            <div class="card-body">
+                <h5 class="card-title text-info">Contactanos</h5>
+                <p class="card-text">Dejanos tu consulta y te responderemos a la brevedad.</p>
+                <a asp-controller="Formularios" asp-action="Create" class="btn btn-outline-info">Enviar Consulta</a>
+            </div>
+        </div>
+    </div>
+</div>

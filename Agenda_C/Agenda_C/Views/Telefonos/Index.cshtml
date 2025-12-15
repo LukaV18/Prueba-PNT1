@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Agenda_C.Models.Telefono>
+
+@{
+    ViewData["Title"] = "Teléfonos";
+}
+
+<h1> Teléfonos</h1>
+
+@if (TempData["Mensaje"] != null)
+{
+    var tipoMensaje = TempData["TipoMensaje"]?.ToString() ?? "info";
+    <div class="alert alert-@tipoMensaje alert-dismissible fade show" role="alert">
+        @TempData["Mensaje"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">
+         Agregar Nuevo Teléfono
+    </a>
+</p>
+
+<table class="table table-hover table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Persona</th>
+            <th>Teléfono Completo</th>
+            <th>Tipo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @if (item.Persona != null)
+                    {
+                        <span>@item.Persona.NombreCompleto</span>
+                    }
+                    else
+                    {
+                        <span class="text-muted">Sin persona asignada</span>
+                    }
+                </td>
+                <td>
+                    <strong>@item.TelefonoCompleto</strong>
+                    <br />
+                    <small class="text-muted">
+                        País: @item.CodigoPais | Área: @item.Prefijo | Nro: @item.Numero
+                    </small>
+                </td>
+                <td>
+                    <span class="badge bg-info">@item.TipoDeTelefono</span>
+                </td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">
+                             Ver
+                        </a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">
+                             Editar
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">
+                             Eliminar
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+         No hay teléfonos registrados en el sistema.
+    </div>
+}

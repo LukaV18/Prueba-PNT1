@@ -1,0 +1,66 @@
+@model List<DateTime>
+
+@{
+    ViewData["Title"] = "Reservar Turno - Paso 3";
+    var prestacion = ViewBag.Prestacion as Agenda_C.Models.Prestacion;
+    var profesional = ViewBag.Profesional as Agenda_C.Models.Profesional;
+}
+
+<h1>Reservar Turno</h1>
+<div class="progress mb-4" style="height: 30px;">
+  <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">Paso 3: Confirmar Fecha</div>
+</div>
+
+<div class="alert alert-info shadow-sm">
+    <h4>Resumen de la Reserva</h4>
+    <hr/>
+    <div class="row">
+        <div class="col-md-6">
+            <strong>Prestación:</strong> @prestacion.Nombre<br/>
+            <strong>Duración:</strong> @prestacion.Duracion min<br/>
+            <strong>Precio:</strong> $@prestacion.Precio
+        </div>
+        <div class="col-md-6">
+            <strong>Profesional:</strong> @profesional.NombreCompleto<br/>
+            <strong>Horario de Atención:</strong> @profesional.HoraInicio.ToString(@"hh\:mm") - @profesional.HoraFin.ToString(@"hh\:mm")
+        </div>
+    </div>
+</div>
+
+<h3>Turnos Disponibles (Próximos 7 días)</h3>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-warning">No hay turnos disponibles para este profesional en los próximos 7 días.</div>
+    <a asp-action="ReservarWizardPaso2" asp-route-prestacionId="@prestacion.Id" class="btn btn-secondary">Volver</a>
+}
+else
+{
+    <div class="row">
+        @foreach (var fecha in Model.GroupBy(d => d.Date))
+        {
+            <div class="col-md-3 mb-3">
+                <div class="card h-100 border-primary">
+                    <div class="card-header text-center bg-primary text-white font-weight-bold">
+                        @fecha.Key.ToString("dddd dd/MM")
+                    </div>
+                    <div class="card-body p-2" style="max-height: 300px; overflow-y: auto;">
+                        @foreach (var slot in fecha)
+                        {
+                            <form asp-action="ConfirmarReserva" method="post" class="mb-2">
+                                <input type="hidden" name="prestacionId" value="@prestacion.Id" />
+                                <input type="hidden" name="profesionalId" value="@profesional.Id" />
+                                <input type="hidden" name="fechaHora" value="@slot.ToString("yyyy-MM-dd HH:mm:ss")" />
+                                
+                                <button type="submit" class="btn btn-outline-success w-100" 
+                                        onclick="return confirm('¿Confirmar turno para el @slot.ToString("dd/MM HH:mm")?');">
+                                    <i class="bi bi-calendar-check"></i> @slot.ToString("HH:mm")
+                                </button>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

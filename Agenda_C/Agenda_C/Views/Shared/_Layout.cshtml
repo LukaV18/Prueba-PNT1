@@ -1,0 +1,128 @@
+﻿@inject SignInManager<Agenda_C.Models.Persona> SignInManager
+@inject UserManager<Agenda_C.Models.Persona> UserManager
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Agenda_C</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Agenda_C.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="/favicon.ico" alt="Logo" width="30" height="30" class="d-inline-block align-top me-2">
+                    <strong>MediTurnos</strong>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Prestaciones" asp-action="Index">Prestaciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Profesionales" asp-action="Index">Profesionales</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Formularios" asp-action="Create">Contacto</a>
+                        </li>
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            @if (User.IsInRole("Administrador"))
+                            {
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown">Administración</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" asp-controller="Pacientes" asp-action="Index">Pacientes</a></li>
+                                        <li><a class="dropdown-item" asp-controller="Turnos" asp-action="Index">Turnos</a></li>
+                                        <li><a class="dropdown-item" asp-controller="Coberturas" asp-action="Index">Coberturas</a></li>
+                                        <li><a class="dropdown-item" asp-controller="Matriculas" asp-action="Index">Matrículas</a></li>
+                                        <li><a class="dropdown-item" asp-controller="Formularios" asp-action="Index">Formularios</a></li>
+                                        <li><a class="dropdown-item" asp-controller="Administradores" asp-action="Index">Administradores</a></li>
+                                    </ul>
+                                </li>
+                            }
+                            @if (User.IsInRole("Profesional"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Turnos" asp-action="Index">Mis Turnos</a>
+                                </li>
+                            }
+                            @if (User.IsInRole("Paciente"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Turnos" asp-action="Index">Mis Turnos</a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                    <!-- NUEVO: Sección de autenticación -->
+                    <ul class="navbar-nav ms-auto">
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                    Hola, @User.Identity.Name
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                    <li><a class="dropdown-item" asp-controller="Account" asp-action="Profile">Mi Perfil</a></li>
+                                    @if (User.IsInRole("Paciente"))
+                                    {
+                                        <li><a class="dropdown-item" asp-controller="Turnos" asp-action="ReservarWizard">📅 Reservar Turno</a></li>
+                                        <li><a class="dropdown-item" asp-controller="Turnos" asp-action="Index">Mis Turnos</a></li>
+                                    }
+                                    @if (User.IsInRole("Profesional"))
+                                    {
+                                        <li><a class="dropdown-item" asp-controller="Turnos" asp-action="MisHorarios">Mis Horarios</a></li>
+                                    }
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li>
+                                        <form asp-controller="Account" asp-action="Logout" method="post">
+                                            <button type="submit" class="dropdown-item">Cerrar Sesión</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Iniciar Sesión</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Register">Registrarse</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - MediTurnos - Centro Medico - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacidad</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

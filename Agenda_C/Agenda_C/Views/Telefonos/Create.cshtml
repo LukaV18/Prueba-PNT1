@@ -1,0 +1,107 @@
+﻿@model Agenda_C.Models.Telefono
+
+@{
+    ViewData["Title"] = "Agregar Teléfono";
+}
+
+<h1> Agregar Nuevo Teléfono</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="alert alert-info">
+                <strong> Información:</strong> Complete los campos con solo números, sin espacios ni guiones.
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group mb-3">
+                        <label asp-for="CodigoPais" class="control-label"></label>
+                        <input asp-for="CodigoPais" class="form-control" placeholder="+54" maxlength="5" />
+                        <span asp-validation-for="CodigoPais" class="text-danger"></span>
+                        <small class="form-text text-muted">Ej: +54, 54, +1</small>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group mb-3">
+                        <label asp-for="Prefijo" class="control-label"></label>
+                        <input asp-for="Prefijo" class="form-control" placeholder="11" maxlength="5" />
+                        <span asp-validation-for="Prefijo" class="text-danger"></span>
+                        <small class="form-text text-muted">Ej: 11, 341, 0351</small>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label asp-for="Numero" class="control-label"></label>
+                        <input asp-for="Numero" class="form-control" placeholder="12345678" maxlength="10" />
+                        <span asp-validation-for="Numero" class="text-danger"></span>
+                        <small class="form-text text-muted">Ej: 12345678 (6-10 dígitos)</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="TipoDeTelefono" class="control-label"></label>
+                <select asp-for="TipoDeTelefono" class="form-select" asp-items="ViewBag.TiposDeTelefono">
+                    <option value="">-- Seleccione un tipo --</option>
+                </select>
+                <span asp-validation-for="TipoDeTelefono" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="PersonaId" class="control-label">Persona</label>
+                <select asp-for="PersonaId" class="form-select" asp-items="ViewBag.PersonaId">
+                    <option value="">-- Seleccione una persona --</option>
+                </select>
+            </div>
+
+            <div class="card mb-3 bg-light">
+                <div class="card-body">
+                    <h6 class="card-title"> Ejemplos Válidos:</h6>
+                    <ul class="mb-0">
+                        <li><strong>Argentina Móvil:</strong> +54 | 11 | 12345678</li>
+                        <li><strong>Argentina Fijo:</strong> +54 | 341 | 1234567</li>
+                        <li><strong>USA:</strong> +1 | 212 | 1234567</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="form-group mt-4">
+                <button type="submit" class="btn btn-success btn-lg">
+                     Guardar
+                </button>
+                <a asp-action="Index" class="btn btn-secondary btn-lg">
+                    ↩️ Volver al Listado
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        
+        document.querySelectorAll('input[type="text"]').forEach(input => {
+            input.addEventListener('input', function() {
+                
+                if (this.id === 'CodigoPais') {
+                    this.value = this.value.replace(/[^\d+]/g, '');
+                    if (this.value.indexOf('+') > 0) {
+                        this.value = '+' + this.value.replace(/\+/g, '');
+                    }
+                } else {
+                    this.value = this.value.replace(/\D/g, '');
+                }
+            });
+        });
+    </script>
+}

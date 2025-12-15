@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Agenda_C.Models.Cobertura">
+    <Position X="3.25" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAABAAAACAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Cobertura.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Prestadora" />
+      <Property Name="Paciente" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Agenda_C.Models.Direccion">
+    <Position X="11" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgEAAAAEAABAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Models\Direccion.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Persona" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Agenda_C.Models.Formulario">
+    <Position X="3.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAQGEAAAAgAABAAEAAAAAAAAEIAAAABA=</HashCode>
+      <FileName>Models\Formulario.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Prestadora" />
+      <Property Name="Cobertura" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Agenda_C.Models.Matricula">
+    <Position X="14.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAEAAAAAAAAACAAAABAAAAAAAAABAAQ=</HashCode>
+      <FileName>Models\Matricula.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Profesional" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Agenda_C.Models.Paciente">
+    <Position X="6.25" Y="6" Width="1.5" />
+    <AssociationLine Name="Formularios" Type="Agenda_C.Models.Formulario" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.082" />
+        <Point X="5.875" Y="7.082" />
+        <Point X="5.875" Y="7.394" />
+        <Point X="4.75" Y="7.394" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Models\Paciente.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Formularios" />
+      <Property Name="Turnos" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Agenda_C.Models.Persona">
+    <Position X="7.5" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAAEEACAAgABAAAEAAAAAAQAAAgAAAAA=</HashCode>
+      <FileName>Models\Persona.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Direccion" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Telefonos" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Agenda_C.Models.Prestacion">
+    <Position X="12" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAgAARACABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Prestacion.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Profesionales" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Agenda_C.Models.Profesional">
+    <Position X="8.5" Y="6" Width="1.5" />
+    <AssociationLine Name="Turnos" Type="Agenda_C.Models.Turno" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="9.375" Y="7.846" />
+        <Point X="9.375" Y="8.221" />
+        <Point X="8.938" Y="8.221" />
+        <Point X="8.938" Y="9.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAEAAAAAAgAAEAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Models\Profesional.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Turnos" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Agenda_C.Models.Telefono">
+    <Position X="14" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAgAAAAAAAAAAABAAAEAAABAAA=</HashCode>
+      <FileName>Models\Telefono.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TipoDeTelefono" />
+      <Property Name="Persona" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Agenda_C.Models.Turno">
+    <Position X="7.25" Y="9.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAAABAAAAEAAgEAAAAAAAQAAAAgAAAAAAAAEAA=</HashCode>
+      <FileName>Models\Turno.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Paciente" />
+      <Property Name="Asignado" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="Agenda_C.Models.Prestadora">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAIAAAAAAAAACAAABIAAAAAAAAgAAAAAAgAAAAAA=</HashCode>
+      <FileName>Models\Prestadora.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Agenda_C.Models.Provincia" Collapsed="true">
+    <Position X="17" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAACAIgAAABAAMgAASIQAAAEMAAAAAEAQAACEAAAE=</HashCode>
+      <FileName>Models\Provincia.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Agenda_C.Models.TipoDeTelefono" Collapsed="true">
+    <Position X="16" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAQCAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\TipoDeTelefono.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Agenda_C.Models.TipoMatricula" Collapsed="true">
+    <Position X="17" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\TipoMatricula.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Calibri Light" Size="10" />
+</ClassDiagram>

@@ -1,0 +1,75 @@
+﻿@model Agenda_C.Models.Paciente
+
+@{
+    ViewData["Title"] = "Editar Paciente";
+}
+
+<h1>Editar Paciente</h1>
+
+<h4>Paciente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <input type="hidden" asp-for="Id" />
+            
+            <!-- El profe nos marcó que el Edit no funciona porque faltan campos en la vista.
+                 La solución que encontramos es mostrar DNI, Nombre y Apellido como READONLY
+                 ya que estos datos son inmutables (no se pueden cambiar una vez creado el paciente).
+                 En el controller después hacemos el mapping para restaurar esos campos del original. -->
+            
+            <div class="form-group">
+                <label asp-for="DNI" class="control-label"></label>
+                <input asp-for="DNI" class="form-control" readonly />
+                <small class="form-text text-muted">El DNI no se puede modificar</small>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" readonly />
+                <small class="form-text text-muted">El nombre no se puede modificar</small>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Apellido" class="control-label"></label>
+                <input asp-for="Apellido" class="form-control" readonly />
+                <small class="form-text text-muted">El apellido no se puede modificar</small>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" readonly />
+                <small class="form-text text-muted">El nombre de usuario no se puede modificar</small>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" readonly />
+                <small class="form-text text-muted">El email no se puede modificar</small>
+            </div>
+            
+            <!-- Ahora sí agregamos la cobertura, que se puede asignar/cambiar en Edit -->
+            <div class="form-group">
+                <label asp-for="CoberturaId" class="control-label">Cobertura (Opcional)</label>
+                <select asp-for="CoberturaId" class="form-control" asp-items="ViewBag.Coberturas">
+                    <option value="">-- Sin cobertura --</option>
+                </select>
+                <span asp-validation-for="CoberturaId" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver al listado</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

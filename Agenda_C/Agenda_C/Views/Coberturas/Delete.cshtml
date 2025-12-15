@@ -1,0 +1,88 @@
+﻿@model Agenda_C.Models.Cobertura
+
+@{
+    ViewData["Title"] = "Eliminar Cobertura";
+    var tienePacientes = (bool)(ViewBag.TienePacientes ?? false);
+    var tieneFormularios = (bool)(ViewBag.TieneFormularios ?? false);
+    var puedeEliminar = !tienePacientes && !tieneFormularios;
+}
+
+<h1 class="text-danger"> Eliminar Cobertura</h1>
+<hr />
+
+@if (!puedeEliminar)
+{
+    <div class="alert alert-danger">
+        <h4 class="alert-heading"> No se puede eliminar esta cobertura</h4>
+        <ul class="mb-0">
+            @if (tienePacientes)
+            {
+                <li>Tiene <strong>pacientes asociados</strong> que dependen de esta cobertura.</li>
+            }
+            @if (tieneFormularios)
+            {
+                <li>Tiene <strong>formularios de contacto</strong> asociados.</li>
+            }
+        </ul>
+        <hr />
+        <p class="mb-0">
+            Para eliminar esta cobertura, primero debe desvincular los pacientes y eliminar los formularios asociados.
+        </p>
+    </div>
+}
+else
+{
+    <div class="alert alert-warning">
+        <strong> Atención:</strong> ¿Está seguro que desea eliminar esta cobertura?
+    </div>
+}
+
+<div class="card">
+    <div class="card-header bg-dark text-white">
+        <h5>Información de la Cobertura</h5>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-4">Número de Credencial:</dt>
+            <dd class="col-sm-8"><strong>@Model.NumeroCredencial</strong></dd>
+
+            <dt class="col-sm-4">Prestadora:</dt>
+            <dd class="col-sm-8">
+                <span class="badge bg-info">@Model.Prestadora</span>
+            </dd>
+
+            <dt class="col-sm-4">Paciente Asociado:</dt>
+            <dd class="col-sm-8">
+                @if (Model.Paciente != null)
+                {
+                    <span>@Model.Paciente.NombreCompleto</span>
+                }
+                else
+                {
+                    <span class="text-muted">Sin paciente asignado</span>
+                }
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<div class="mt-4">
+    @if (puedeEliminar)
+    {
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-danger btn-lg">
+                 Confirmar Eliminación
+            </button>
+            <a asp-action="Index" class="btn btn-secondary btn-lg">
+                ↩️ Cancelar
+            </a>
+        </form>
+    }
+    else
+    {
+        <a asp-action="Index" class="btn btn-primary btn-lg">
+            ↩️ Volver al Listado
+        </a>
+    }
+</div>

@@ -1,0 +1,74 @@
+﻿@model Agenda_C.Models.Turno
+@using Microsoft.AspNetCore.Identity
+@using Agenda_C.Models
+@inject UserManager<Persona> UserManager
+
+@{
+    ViewData["Title"] = "Cancelar Turno";
+    var isPaciente = User.IsInRole("Paciente");
+    bool puedeCancelar = ViewBag.PuedeCancelar ?? true;
+}
+
+<h1>Cancelar Turno</h1>
+
+<h3>¿Estás seguro de que deseas cancelar este turno?</h3>
+
+@if (isPaciente && !puedeCancelar)
+{
+    <div class="alert alert-danger" role="alert">
+        <strong>No puedes cancelar este turno.</strong><br/>
+        Los pacientes solo pueden cancelar turnos con al menos 24 horas de anticipación.
+        Este turno es en menos de 24 horas.
+    </div>
+}
+
+<div>
+    <h4>Detalles del Turno</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Fecha y Hora
+        </dt>
+        <dd class="col-sm-10">
+            @Model.FechaHora.ToString("dddd, dd/MM/yyyy HH:mm")
+        </dd>
+        <dt class="col-sm-2">
+            Paciente
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Paciente?.NombreCompleto
+        </dd>
+        <dt class="col-sm-2">
+            Profesional
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Profesional?.NombreCompleto
+        </dd>
+        <dt class="col-sm-2">
+            Estado
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.Confirmado)
+            {
+                <span class="badge bg-success">Confirmado</span>
+            }
+            else
+            {
+                <span class="badge bg-warning text-dark">Pendiente</span>
+            }
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        @if (puedeCancelar)
+        {
+            <button type="submit" class="btn btn-danger">Confirmar Cancelación</button>
+        }
+        else
+        {
+            <button type="button" class="btn btn-secondary" disabled>No se puede cancelar</button>
+        }
+        <a asp-action="Index" class="btn btn-outline-secondary">Volver</a>
+    </form>
+</div>

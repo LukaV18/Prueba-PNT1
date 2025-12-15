@@ -1,0 +1,101 @@
+﻿@model IEnumerable<Agenda_C.Models.Turno>
+@using Microsoft.AspNetCore.Identity
+@using Agenda_C.Models
+@inject UserManager<Persona> UserManager
+
+@{
+    ViewData["Title"] = "Mis Turnos";
+    var currentUser = await UserManager.GetUserAsync(User);
+    var isAdmin = User.IsInRole("Administrador");
+    var isProfesional = User.IsInRole("Profesional");
+    var isPaciente = User.IsInRole("Paciente");
+}
+
+<h1>@(isAdmin ? "Gestion de Turnos" : "Mis Turnos")</h1>
+
+@if (isAdmin)
+{
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Nuevo Turno (Manual)</a>
+    </p>
+}
+@if (isPaciente)
+{
+    <p>
+        <a asp-action="ReservarWizard" class="btn btn-success">📅 Reservar Nuevo Turno</a>
+    </p>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaHora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Paciente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profesional)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Confirmado)
+            </th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaHora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Paciente.NombreCompleto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Profesional.NombreCompleto)
+            </td>
+            <td>
+                @if (item.Confirmado)
+                {
+                    <span class="badge bg-success">Confirmado</span>
+                }
+                else
+                {
+                    <span class="badge bg-warning text-dark">Pendiente</span>
+                }
+            </td>
+            <td>
+                @if (isAdmin || (isProfesional && item.ProfesionalId == currentUser?.Id))
+                {
+                    if (!item.Confirmado)
+                    {
+                        <form asp-action="Confirmar" asp-route-id="@item.Id" method="post" style="display:inline;">
+                            <button type="submit" class="btn btn-sm btn-success">Confirmar</button>
+                        </form>
+                    }
+                }
+
+                @if (isAdmin)
+                {
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Editar</a> 
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Detalles</a> 
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Cancelar</a>
+                }
+                else if (isProfesional)
+                {
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Detalles</a>
+                    // Profesional puede cancelar? El requerimiento dice "Puede cancelar un turno...". Asumimos que sí.
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Cancelar</a>
+                }
+                else if (isPaciente)
+                {
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Detalles</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Cancelar</a>
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

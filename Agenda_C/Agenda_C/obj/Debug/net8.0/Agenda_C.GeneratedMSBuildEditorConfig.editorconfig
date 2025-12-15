@@ -1,0 +1,303 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v8.0
+build_property.RootNamespace = Agenda_C
+build_property.RootNamespace = Agenda_C
+build_property.ProjectDir = C:\Users\lukav\Desktop\NT1-2025-2C-C-G5-main\Agenda_C\Agenda_C\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\lukav\Desktop\NT1-2025-2C-C-G5-main\Agenda_C\Agenda_C
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Administradores/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYWRvcmVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Administradores/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYWRvcmVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Administradores/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYWRvcmVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Administradores/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYWRvcmVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Administradores/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYWRvcmVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Coberturas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29iZXJ0dXJhc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Coberturas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29iZXJ0dXJhc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Coberturas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29iZXJ0dXJhc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Coberturas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29iZXJ0dXJhc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Coberturas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29iZXJ0dXJhc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Direcciones/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlyZWNjaW9uZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Direcciones/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlyZWNjaW9uZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Direcciones/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlyZWNjaW9uZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Direcciones/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlyZWNjaW9uZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Direcciones/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlyZWNjaW9uZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Formularios/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybXVsYXJpb3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Formularios/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybXVsYXJpb3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Formularios/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybXVsYXJpb3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Formularios/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybXVsYXJpb3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Formularios/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybXVsYXJpb3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Matriculas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0cmljdWxhc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Matriculas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0cmljdWxhc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Matriculas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0cmljdWxhc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Matriculas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0cmljdWxhc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Matriculas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0cmljdWxhc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Pacientes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Pacientes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Pacientes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Pacientes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Pacientes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Personas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uYXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Personas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uYXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Personas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uYXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Personas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uYXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Personas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uYXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Prestaciones/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhY2lvbmVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Prestaciones/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhY2lvbmVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Prestaciones/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhY2lvbmVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Prestaciones/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhY2lvbmVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Prestaciones/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhY2lvbmVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Profesionales/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzaW9uYWxlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Profesionales/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzaW9uYWxlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Profesionales/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzaW9uYWxlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Profesionales/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzaW9uYWxlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Profesionales/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzaW9uYWxlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Telefonos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVsZWZvbm9zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Telefonos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVsZWZvbm9zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Telefonos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVsZWZvbm9zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Telefonos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVsZWZvbm9zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Telefonos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVsZWZvbm9zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Turnos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Turnos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Turnos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Turnos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Turnos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Turnos/ReservarWizard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9zXFJlc2VydmFyV2l6YXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Turnos/ReservarWizardPaso2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9zXFJlc2VydmFyV2l6YXJkUGFzbzIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Turnos/ReservarWizardPaso3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9zXFJlc2VydmFyV2l6YXJkUGFzbzMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lukav/Desktop/NT1-2025-2C-C-G5-main/Agenda_C/Agenda_C/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-rrnh8x5ldu

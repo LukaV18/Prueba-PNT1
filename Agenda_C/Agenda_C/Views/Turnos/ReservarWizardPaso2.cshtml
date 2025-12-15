@@ -1,0 +1,41 @@
+@model IEnumerable<Agenda_C.Models.Profesional>
+
+@{
+    ViewData["Title"] = "Reservar Turno - Paso 2";
+    var prestacion = ViewBag.Prestacion as Agenda_C.Models.Prestacion;
+}
+
+<h1>Reservar Turno</h1>
+<div class="progress mb-4" style="height: 30px;">
+  <div class="progress-bar bg-success" role="progressbar" style="width: 66%;" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100">Paso 2: Profesional</div>
+</div>
+
+<h3>Seleccione el Profesional para: <span class="text-info">@prestacion.Nombre</span></h3>
+
+<div class="row">
+    @if (!Model.Any())
+    {
+        <div class="col-12">
+            <div class="alert alert-warning">No hay profesionales disponibles para esta prestación.</div>
+            <a asp-action="ReservarWizard" class="btn btn-secondary">Volver</a>
+        </div>
+    }
+    
+    @foreach (var item in Model) {
+        <div class="col-md-4 mb-3">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">@item.NombreCompleto</h5>
+                    <p class="card-text">
+                        <strong>Matrícula:</strong> @item.Matricula?.Numero (@item.Matricula?.Tipo)<br/>
+                        <strong>Horario:</strong> @item.HoraInicio.ToString(@"hh\:mm") - @item.HoraFin.ToString(@"hh\:mm")
+                    </p>
+                    <a asp-action="ReservarWizardPaso3" 
+                       asp-route-prestacionId="@prestacion.Id" 
+                       asp-route-profesionalId="@item.Id" 
+                       class="btn btn-primary w-100">Ver Turnos Disponibles</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

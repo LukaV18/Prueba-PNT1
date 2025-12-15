@@ -1,0 +1,84 @@
+﻿@model Agenda_C.Models.Profesional
+
+@{
+    ViewData["Title"] = "Crear Profesional";
+}
+
+<h1>Crear Profesional</h1>
+
+<h4>Profesional</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <!-- Los selects no funcionaban porque estaban buscando ViewBag.MatriculaId
+                 cuando en realidad el controller está usando ViewData["Matriculas"].
+                 Ahora los corregimos y además los hacemos opcionales con "Sin asignar". -->
+            
+            <div class="form-group">
+                <label asp-for="MatriculaId" class="control-label">Matrícula (Opcional)</label>
+                <select asp-for="MatriculaId" class="form-control" asp-items="@(ViewData["Matriculas"] as SelectList)">
+                    <option value="">-- Sin matrícula asignada --</option>
+                </select>
+                <span asp-validation-for="MatriculaId" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="PrestacionId" class="control-label">Prestación (Opcional)</label>
+                <select asp-for="PrestacionId" class="form-control" asp-items="@(ViewData["Prestaciones"] as SelectList)">
+                    <option value="">-- Sin prestación asignada --</option>
+                </select>
+                <span asp-validation-for="PrestacionId" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="HoraInicio" class="control-label"></label>
+                <input asp-for="HoraInicio" class="form-control" />
+                <span asp-validation-for="HoraInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HoraFin" class="control-label"></label>
+                <input asp-for="HoraFin" class="form-control" />
+                <span asp-validation-for="HoraFin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apellido" class="control-label"></label>
+                <input asp-for="Apellido" class="form-control" />
+                <span asp-validation-for="Apellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DNI" class="control-label"></label>
+                <input asp-for="DNI" class="form-control" />
+                <span asp-validation-for="DNI" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver al listado</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
